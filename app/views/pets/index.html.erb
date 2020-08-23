@@ -1,0 +1,20 @@
+<h1>All Pets</h1>
+
+<% @pets.each do |pet| %> #the view gets '@pets' from the 'index' of it's controller
+<section class="pets-list">
+  <h2><%= pet.name %></h2>
+
+  <a href="/pets/<%= pet.id %>/edit" value="Update" id="Update" style="margin-left:20px;">Update</a>
+  <br><br>
+    <form action="/pets/<%= pet.id %>" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete"/>
+    </form>
+  </section>
+<% end %>
+<br>
+
+<section class="home">
+  <p style="font-size:20px;"><a href="/">Home</a></p>
+</section>

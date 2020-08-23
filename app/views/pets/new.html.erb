@@ -84,30 +84,29 @@ function adjust_textarea(h) {
     h.style.height = (h.scrollHeight)+"px";
 }
 </script>
-<h1>Enter new shelter's info here:</h1>
+<h1>Enter new pet's info here:</h1>
 
-<form class="form-style-4" action="/shelters" method="post">
+<form class="form-style-4" action="/pets" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <h2>Enter a new shelter:</h2>
+  <h2>Enter a new pet:</h2>
 
   <label for="field1">
-  <span>Shelter's name</span><input type="text" name="shelter[name]" required="true" /> #'required true' won't allow user to NOT fill out
+  <span>Pet's image</span><input type="text" name="pet[image]" id="image" required="true" />
   </label>
 
   <label for="field2">
-  <span>Address</span><input type="text" name="shelter[address]" id="address" required="true" />
+  <span>Name</span><input type="text" name="pet[name]" id="name" required="true" />
   </label>
 
   <label for="field3">
-  <span>City</span><input type="text" name="shelter[city]" id="city" required="true" />
+  <span>Age</span><input type="text" name="pet[age]" id="age" required="true" />
   </label>
 
-  <label for="field5">
-  <span>State</span><textarea type="number" name="shelter[state]" id ="state" onkeyup="adjust_textarea(this)" required="true"></textarea>
+  <label for="field4">
+  <span>Sex</span><textarea name="pet[sex]" id="sex" onkeyup="adjust_textarea(this)" required="true"></textarea>
   </label>
-
-  <label for="field5">
-  <span>Zip</span><textarea type="number" name="shelter[zip]" id ="zip" onkeyup="adjust_textarea(this)" required="true"></textarea>
+  <label for="field6">
+  <span>Adoptable?</span><textarea type="number" name="pet[adoptable]" id ="adoptable" onkeyup="adjust_textarea(this)" required="true"></textarea>
   </label>
   <label>
   <span> </span><input type="submit" id="submit" value="submit" />

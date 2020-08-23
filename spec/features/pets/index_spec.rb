@@ -2,21 +2,21 @@ require 'rails_helper'
 
 RSpec.describe 'pets index page' do
   before :each do
-    @shelter_1 = Shelter.create(name:       "Dave's Barn",
+    @shelter_1 = Shelter.create!(name:       "Dave's Barn",
                          address:      '208 South Yup Street',
                          city:  'LakeSmall',
                         state: 'CO',
                         zip: 87663)
 
-    @pet_1 = Pet.create(image:       "Dave's Barn",
+    @pet_1 = Pet.create!(image:       "Dave's Barn",
                          name:      '208 South Yup Street',
                          sex:  'LakeSmall',
-                        shelter: 'CO',
+                        shelter: 'CO', approximate_age: 3,
                         adoptable: 87663, shelter: @shelter_1)
-    @pet_2 = Pet.create(image:       "Pups & Catz",
+    @pet_2 = Pet.create!(image:       "Pups & Catz",
                          name:      '2081 North Nope Road',
                          sex:  'Aurora',
-                        shelter: 'NY',
+                        shelter: 'NY', approximate_age: 8,
                         adoptable: 11890, shelter: @shelter_1)
   end
 
