@@ -1,0 +1,21 @@
+<a href="/shelters"><h1>Shelter Index</h1></a>
+<section class="shelters-list" style="margin-top:20px;">
+  <p style="font-weight:bold;"><%= @shelter.name %></p>
+
+  <p style="font-size:18px;"><%= @shelter.address %></p>
+
+  <p style="font-size:18px;"><%= @shelter.city %></p>
+
+  <p style="font-size:18px;"><%= @shelter.state %></p>
+
+  <p style="font-size:18px;"><%= @shelter.zip %></p>
+
+  <a href="/shelters/<%= @shelter.id %>/edit" value="Update" style="margin-left:10px;">Update Shelter</a>
+  <br><br>
+
+  <form action="/shelters/<%= @shelter.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete"/>
+  </form>
+</section>
